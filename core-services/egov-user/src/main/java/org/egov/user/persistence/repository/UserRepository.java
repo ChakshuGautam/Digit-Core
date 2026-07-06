@@ -283,6 +283,11 @@ public class UserRepository {
             updateuserInputs.put("MobileNumber", user.getMobileNumber());
         else
             updateuserInputs.put("MobileNumber", oldUser.getMobileNumber());
+
+        if (null != user.getCountryCode())
+            updateuserInputs.put("CountryCode", user.getCountryCode());
+        else
+            updateuserInputs.put("CountryCode", oldUser.getCountryCode());
         updateuserInputs.put("Name", user.getName());
         updateuserInputs.put("Pan", user.getPan());
 
@@ -500,6 +505,7 @@ public class UserRepository {
         userInputs.put("password", entityUser.getPassword());
         userInputs.put("pwdexpirydate", entityUser.getPasswordExpiryDate());
         userInputs.put("mobilenumber", entityUser.getMobileNumber());
+        userInputs.put("countrycode", entityUser.getCountryCode());
         userInputs.put("altcontactnumber", entityUser.getAltContactNumber());
         userInputs.put("emailid", entityUser.getEmailId());
         userInputs.put("active", entityUser.getActive());
